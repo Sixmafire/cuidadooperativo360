@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidado Operativo 360°</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- VIEW: estilos -->
+  <link rel="stylesheet" href="view/css/styles.css">
+  <link rel="stylesheet" href="view/css/pages.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <!-- El controller inyecta el contenido aquí -->
+    </div>
+  </nav>
+
+  <!-- ── PÁGINAS ────────────────────────────────── -->
+  <!-- El controller inyecta el HTML de cada sección -->
+  <section id="inicio"></section>
+  <section id="interfases"></section>
+  <section id="nosotros"></section>
+  <section id="tienda"></section>
+
+  <!-- ── CHAT FLOTANTE ──────────────────────────── -->
+  <button class="chat-fab" onclick="Controller.toggleChat()" title="Abrir chat">💬</button>
+  <div class="chat-panel" id="chatPanel">
+    <!-- Renderizado por el controller -->
+  </div>
+
+  <!-- ── MODAL DEMO ─────────────────────────────── -->
+  <div class="modal-overlay" id="modalOverlay"
+       onclick="Controller.closeModalOutside(event)">
+    <div class="modal">
+      <!-- Renderizado por el controller -->
+    </div>
+  </div>
+
+  <!-- ── TOAST ──────────────────────────────────── -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ── SCRIPTS ────────────────────────────────── -->
+  <!-- Orden importante: Model → View → Controller -->
+  <script src="model/data.js"></script>
+  <script src="view/pages/templates.js"></script>
+  <script src="controller/app.js"></script>
+
+</body>
+</html>
