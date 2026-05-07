@@ -320,7 +320,10 @@ section.active { display: block; }
   
   /* Oculta elementos pesados en móviles para mejorar la carga */
   .hero .dashboard-card, .nosotros-icon-big { 
-    display: none; 
+    display: block; 
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
   }
 
   /* Todo a una sola columna para lectura vertical */
