@@ -280,12 +280,15 @@ section.active { display: block; }
 @media (max-width: 768px) {
   /* --- Navegación --- */
   .menu-toggle {
-    display: block; /* Muestra el botón en móviles */
+    display: block !important; /* Muestra el botón en móviles */
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
     color: var(--navy);
+    padding: 10px;
+    z-index: 101;
+     
   }
 
   .nav-links {
@@ -305,7 +308,7 @@ section.active { display: block; }
 
   /* Esta clase se activará con JavaScript */
   .nav-links.open {
-    display: flex;
+    display: flex !important;
   }
 
   /* --- Ajustes de Estructura --- */
