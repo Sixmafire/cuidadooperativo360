@@ -329,7 +329,10 @@ const Views = {
     return `
       <div class="tienda-header">
         <div class="tienda-badge">Planes de implementación para IPS</div>
-        <h2>Elige cómo implementar<br><span class="accent-green">Cuidado Operativo 360°</span></h2>
+        <h2>
+          <span style="color: #1B4FD8;">Elige cómo implementar</span><br> 
+          <span class="accent-green">Cuidado Operativo 360°</span>
+        </h2>
         <p>Planes flexibles y escalables para que tu IPS digitalice sus procesos, mejore el control operativo y eleve la calidad del cuidado.</p>
       </div>
       <div class="plans-grid">${planesHTML}</div>
