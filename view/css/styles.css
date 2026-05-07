@@ -274,16 +274,70 @@ section.active { display: block; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* ============================================================
+   RESPONSIVE MEJORADO
+   ============================================================ */
 @media (max-width: 768px) {
-  .hero                { grid-template-columns: 1fr; }
-  .hero .dashboard-card { display: none; }
-  .features-inner      { grid-template-columns: 1fr; }
-  .interfaces-grid     { grid-template-columns: 1fr; }
-  .nosotros-hero       { grid-template-columns: 1fr; }
-  .nosotros-icon-big   { display: none; }
-  .values-row          { grid-template-columns: 1fr; }
-  .plans-grid          { grid-template-columns: 1fr; }
-  .trust-bar           { grid-template-columns: 1fr 1fr; }
-  .team-grid           { grid-template-columns: repeat(3, 1fr); }
-  .nav-links           { gap: 1rem; }
+  /* --- Navegación --- */
+  .menu-toggle {
+    display: block; /* Muestra el botón en móviles */
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--navy);
+  }
+
+  .nav-links {
+    display: none; /* Se oculta por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-border);
+    gap: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    z-index: 100;
+  }
+
+  /* Esta clase se activará con JavaScript */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* --- Ajustes de Estructura --- */
+  .hero, .nosotros-hero { 
+    grid-template-columns: 1fr; /* Coloca una columna sobre otra */
+    text-align: center;
+    padding: 40px 1.5rem; 
+  }
+  
+  /* Oculta elementos pesados en móviles para mejorar la carga */
+  .hero .dashboard-card, .nosotros-icon-big { 
+    display: none; 
+  }
+
+  /* Todo a una sola columna para lectura vertical */
+  .features-inner, .interfaces-grid, .values-row, .plans-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .trust-bar { 
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .team-grid { 
+    grid-template-columns: repeat(3, 1fr); /* 3 integrantes por fila */
+    gap: 10px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (celulares mini) */
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-bar { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; } /* Ajusta el tamaño del título */
 }
